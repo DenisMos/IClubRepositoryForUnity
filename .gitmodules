@@ -1,0 +1,4 @@
+[submodule "Frameworks/NetLibrary/Networking"]
+	path = Frameworks/NetLibrary/Networking
+	url = https://github.com/DenisMos/IClubRepositoryForUnity.git
+	branch = base
