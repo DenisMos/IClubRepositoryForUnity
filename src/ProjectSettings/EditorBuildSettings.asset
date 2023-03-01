@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MenuScene.unity
+    guid: fab13d16db9399a45a098b40e809d4a1
+  - enabled: 1
+    path: Assets/Scenes/PlayAstroCore.unity
+    guid: 49dfb9d91fcb99f459fbf7681aa5d131
   m_configObjects: {}
