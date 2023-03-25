@@ -6,7 +6,7 @@ using Unity.Netcode;
 public class Manager : MonoBehaviour
 {
 
-    public NetworkManager ManagerNet { get; private set; }
+    public NetworkManager ManagerNet;
 
     private void Start()
     {
@@ -14,8 +14,18 @@ public class Manager : MonoBehaviour
     }
 
 
-    public void connect()
+    public void createServer()
     {
         ManagerNet.StartHost();
     }
+
+    public void connectToOthers()
+    {
+        ManagerNet.StartClient();
+    }
+
+    //public void disconnectFromOthers()
+    //{
+    //    ManagerNet.DisconnectClient(,);
+    //}
 }
