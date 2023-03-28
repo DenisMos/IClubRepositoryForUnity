@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MenuScene.unity
     guid: fab13d16db9399a45a098b40e809d4a1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PlayAstroCore.unity
     guid: 49dfb9d91fcb99f459fbf7681aa5d131
+  - enabled: 1
+    path: Assets/Scenes/Test/TestLocation/TestLocation.unity
+    guid: dc214414256d82d47aed4cdbf2b8be28
   m_configObjects: {}
