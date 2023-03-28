@@ -1,29 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[AddComponentMenu ("My components/Enemy/Damage")]
+[AddComponentMenu("My components/Enemy/Damage")]
 public class Damage : MonoBehaviour
 {
-    [Header("Урон")]
-    public int damage = 10;
+	[Header("Урон")]
+	[SerializeField]
+	private int _damage = 10;
 
-    void OnTriggerEnter (Collider myCollider)
-    {
-        if (myCollider.tag == "Player")
-        {
-            myCollider.GetComponent <LevelHealth> ().levelHealth -= (damage);
-        }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	private const string TAG_PLAYER = "Player";
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	private void OnTriggerEnter(Collider myCollider)
+	{
+		if (myCollider.tag == TAG_PLAYER)
+		{
+			myCollider.GetComponent<LevelHealth>().SetDamage(_damage);
+		}
+	}
 }

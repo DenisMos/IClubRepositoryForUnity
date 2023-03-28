@@ -1,31 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
 public class Manager : MonoBehaviour
 {
 
-    public NetworkManager ManagerNet;
+	public NetworkManager ManagerNet;
 
-    private void Start()
-    {
-        
-    }
+	private void Start()
+	{
+		
+	}
 
+	public void createServer()
+	{
+		ManagerNet.StartHost();
+	}
 
-    public void createServer()
-    {
-        ManagerNet.StartHost();
-    }
-
-    public void connectToOthers()
-    {
-        ManagerNet.StartClient();
-    }
-
-    //public void disconnectFromOthers()
-    //{
-    //    ManagerNet.DisconnectClient(,);
-    //}
+	public void connectToOthers()
+	{
+		ManagerNet.StartClient();
+	}
 }

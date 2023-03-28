@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,14 +10,14 @@ public class LevelHealth : MonoBehaviour
     [Header ("Уровень здровья")]
     public Slider _mySlider;
 
-    void Start()
+    public void SetDamage(int damage)
     {
-        
-    }
+		levelHealth -= damage;
+        UpdateControls();
+	}
 
-    
-    void Update()
+    private void UpdateControls()
     {
-        _mySlider.value = levelHealth;
-    }
+		_mySlider.value = levelHealth;
+	}
 }

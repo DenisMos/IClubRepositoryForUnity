@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.Networking.Options;
 
-public class MouseController : MonoBehaviour
+public class MouseController : NetworkBehaviour
 {
 	#region Fields
 
 	[SerializeField]
-    private float mouseSensetivity = 100f;
+	private float mouseSensetivity = 100f;
 	[SerializeField]
 	private Transform playerBody;
 	[SerializeField]
@@ -21,20 +23,23 @@ public class MouseController : MonoBehaviour
 
 	// Start is called before the first frame update
 	void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-    }
+	{
+		Cursor.lockState = CursorLockMode.Locked;
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensetivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensetivity * Time.deltaTime;
+	// Update is called once per frame
+	void Update()
+	{
+		if(!IsLocalPlayer && NetworkOptions.Mode != 0)
+			return;
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+		float mouseX = Input.GetAxis("Mouse X") * mouseSensetivity * Time.deltaTime;
+		float mouseY = Input.GetAxis("Mouse Y") * mouseSensetivity * Time.deltaTime;
 
-        transform.localRotation = Quaternion.Euler(xRotation, Azimuth, 0f);
-        playerBody.Rotate(Vector3.up * mouseX);
-    }
+		xRotation -= mouseY;
+		xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+		transform.localRotation = Quaternion.Euler(xRotation, Azimuth, 0f);
+		playerBody.Rotate(Vector3.up * mouseX);
+	}
 }

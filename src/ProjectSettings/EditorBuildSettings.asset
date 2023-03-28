@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test/TestScenes/TestPlayerController.unity
     guid: 2b35c37318154c24984105a8113f4377
+  - enabled: 1
+    path: Assets/Scenes/Locations/FirstPlanet.unity
+    guid: 4b4dc13cfdb6b2042bc1c778b487d8f0
   m_configObjects: {}
