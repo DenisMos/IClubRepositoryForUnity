@@ -40,8 +40,8 @@ public class NetworkAdapter : MonoBehaviour
 			case 0x00:
 				break;
 			case 0x01:
-				transport.ConnectAddress = NetworkOptions.IP;
-				transport.ConnectPort = NetworkOptions.Port;
+				//transport.ConnectAddress = NetworkOptions.IP;
+				//transport.ConnectPort = NetworkOptions.Port;
 				var status = _manager.StartClient();
 				Debug.Log($"start client {status}");
 				break;
