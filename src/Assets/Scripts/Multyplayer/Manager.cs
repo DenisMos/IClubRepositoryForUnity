@@ -8,7 +8,20 @@ public class Manager : MonoBehaviour
 
 	private void Start()
 	{
-		
+		if(Input.GetKeyDown(KeyCode.LeftShift))
+		{ 
+			
+		}
+
+		if(Input.GetKeyUp(KeyCode.LeftShift))
+		{
+
+		}
+
+		if(Input.GetButtonDown("Shift"))
+		{ 
+			
+		}
 	}
 
 	public void createServer()
