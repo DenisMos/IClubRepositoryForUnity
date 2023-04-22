@@ -4,6 +4,7 @@ using Unity.Netcode;
 using Unity.Netcode.Components;
 using UnityEngine;
 using UnityEngine.Networking.Options;
+using UnityEngine.UI;
 
 public class PlayerController : NetworkBehaviour
 {
@@ -27,6 +28,11 @@ public class PlayerController : NetworkBehaviour
 
 	[SerializeField]
 	private float _modDirect = 1f;
+
+	[SerializeField]
+	private float _Stamina = 100f;
+
+	public Text _text;
 
 	// Update is called once per frame
 	void Update()
@@ -55,8 +61,20 @@ public class PlayerController : NetworkBehaviour
 			Velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
 		}
 
+		_text.text = _Stamina.ToString();
+
 		Velocity.y += gravity * Time.deltaTime;
 		controller.Move(Velocity * Time.deltaTime);
+
+		if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+			speed = 20f;
+			_Stamina -= Time.deltaTime;
+        }
+		else
+		{
+			speed = 12f;
+		}
 	}
 
 	[SerializeField]
@@ -69,5 +87,7 @@ public class PlayerController : NetworkBehaviour
 		transform.position = _spawnPosition;
 		Debug.Log(transform.position);
 		GetComponent<CharacterController>().enabled = true;
+		_text = GameObject.FindGameObjectWithTag("TextStamina").GetComponent<Text>();
+		_Stamina = 100;
 	}
 }
