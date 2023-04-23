@@ -34,6 +34,8 @@ public class PlayerController : NetworkBehaviour
 
 	public Text _text;
 
+	public bool _bool;
+
 	// Update is called once per frame
 	void Update()
 	{
@@ -59,22 +61,39 @@ public class PlayerController : NetworkBehaviour
 		if(Input.GetButtonDown("Jump") && isGrounded)
 		{
 			Velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+			_Stamina -= 20f;
 		}
 
-		_text.text = _Stamina.ToString();
+		_text.text = ((int)_Stamina).ToString();
 
 		Velocity.y += gravity * Time.deltaTime;
 		controller.Move(Velocity * Time.deltaTime);
 
-		if (Input.GetKeyDown(KeyCode.LeftShift))
+		
+
+		if (Input.GetKey(KeyCode.LeftShift) && !_bool )
         {
 			speed = 20f;
-			_Stamina -= Time.deltaTime;
+			_Stamina -= Time.deltaTime * 10f;
         }
 		else
 		{
 			speed = 12f;
+			_Stamina += Time.deltaTime * 10f;
 		}
+		if (_Stamina < 0)
+        {
+			_Stamina = 0;
+			_bool = true;
+        }
+		if (_Stamina > 100)
+        {
+			_Stamina = 100;
+        }
+		if (_Stamina > 20)
+        {
+			_bool = false;
+        }
 	}
 
 	[SerializeField]
