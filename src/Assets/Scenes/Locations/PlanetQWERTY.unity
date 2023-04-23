@@ -246,12 +246,12 @@ Terrain:
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: e20b4b66112818b48ba4ca3fd67fcfa5, type: 2}
   m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_TreeBillboardDistance: 595
+  m_TreeCrossFadeLength: 55
+  m_TreeMaximumFullLODCount: 2827
+  m_DetailObjectDistance: 112
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 5
+  m_HeightmapPixelError: 104
   m_SplatMapDistance: 1000
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 2
@@ -291,15 +291,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1433742019397893696, guid: 2d46221b6d972894cb316048027569f7, type: 3}
       propertyPath: _spawnPosition.x
-      value: 560
+      value: 800.4
       objectReference: {fileID: 0}
     - target: {fileID: 1433742019397893696, guid: 2d46221b6d972894cb316048027569f7, type: 3}
       propertyPath: _spawnPosition.y
-      value: 500
+      value: 11.8
       objectReference: {fileID: 0}
     - target: {fileID: 1433742019397893696, guid: 2d46221b6d972894cb316048027569f7, type: 3}
       propertyPath: _spawnPosition.z
-      value: 700
+      value: 889.7
       objectReference: {fileID: 0}
     - target: {fileID: 6178303383954295894, guid: 2d46221b6d972894cb316048027569f7, type: 3}
       propertyPath: m_RootOrder
@@ -307,15 +307,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6178303383954295894, guid: 2d46221b6d972894cb316048027569f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 564.03326
+      value: 800.4
       objectReference: {fileID: 0}
     - target: {fileID: 6178303383954295894, guid: 2d46221b6d972894cb316048027569f7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 401.4
+      value: 11.8
       objectReference: {fileID: 0}
     - target: {fileID: 6178303383954295894, guid: 2d46221b6d972894cb316048027569f7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 708.0157
+      value: 889.7
       objectReference: {fileID: 0}
     - target: {fileID: 6178303383954295894, guid: 2d46221b6d972894cb316048027569f7, type: 3}
       propertyPath: m_LocalRotation.w
