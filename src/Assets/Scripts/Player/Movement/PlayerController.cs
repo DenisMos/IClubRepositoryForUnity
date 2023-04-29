@@ -34,7 +34,7 @@ public class PlayerController : NetworkBehaviour
 
 	public Text _text;
 
-	public bool _bool;
+	public bool StaminNoRubAndJump;
 
 	// Update is called once per frame
 	void Update()
@@ -71,7 +71,7 @@ public class PlayerController : NetworkBehaviour
 
 		
 
-		if (Input.GetKey(KeyCode.LeftShift) && !_bool )
+		if (Input.GetKey(KeyCode.LeftShift) && !StaminNoRubAndJump)
         {
 			speed = 20f;
 			_Stamina -= Time.deltaTime * 10f;
@@ -84,7 +84,7 @@ public class PlayerController : NetworkBehaviour
 		if (_Stamina < 0)
         {
 			_Stamina = 0;
-			_bool = true;
+            StaminNoRubAndJump = true;
         }
 		if (_Stamina > 100)
         {
@@ -92,7 +92,7 @@ public class PlayerController : NetworkBehaviour
         }
 		if (_Stamina > 20)
         {
-			_bool = false;
+            StaminNoRubAndJump = false;
         }
 	}
 

@@ -24,7 +24,7 @@ public class BadCube : MonoBehaviour
         {
             var vec = Target.transform.position - transform.position;
 
-            transform.position += vec.normalized * Time.deltaTime;
+            transform.position += vec.normalized * Time.deltaTime * 5f;
         }
         
     }
